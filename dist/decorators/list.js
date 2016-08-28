@@ -96,7 +96,7 @@ var List = function List(prefix) {
     }(_react2.default.Component);
 
     ListComponent.propTypes = {
-      items: _react2.default.PropTypes.object.isRequired
+      items: _react2.default.PropTypes.array.isRequired
     };
 
     return ListComponent;

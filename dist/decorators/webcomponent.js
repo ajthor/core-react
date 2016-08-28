@@ -121,9 +121,10 @@ var Webcomponent = function Webcomponent(name) {
           if (options.stylesheets) {
             (function () {
               var styleElement = document.createElement('style');
+              styleElement.type = 'text/css';
               options.stylesheets.forEach(function (sheet) {
                 // styleElement.textContent += `@import "${path.resolve(__dirname, sheet)}";\n`;
-                styleElement.textContent += '@import "' + sheet + '";\n';
+                styleElement.textContent += '@import url("' + sheet + '");\n';
               });
               mountPoint.appendChild(styleElement.cloneNode(true));
             })();
