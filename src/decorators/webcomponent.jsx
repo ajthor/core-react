@@ -52,9 +52,10 @@ const Webcomponent = (name, mapToElement = {}, options = {}) => {
         const mountPoint = this.shadowRoot || this;
         if (options.stylesheets) {
           const styleElement = document.createElement('style');
+          styleElement.type = 'text/css';
           options.stylesheets.forEach(sheet => {
             // styleElement.textContent += `@import "${path.resolve(__dirname, sheet)}";\n`;
-            styleElement.textContent += `@import "${sheet}";\n`;
+            styleElement.textContent += `@import url("${sheet}");\n`;
           });
           mountPoint.appendChild(styleElement.cloneNode(true));
         }
