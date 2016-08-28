@@ -7,32 +7,29 @@
 // on the state of the application whatsoever. The sole job of panels is to
 // organize code within the application and apply layout styles to the
 // components within or to have a (usually flexbox) style that it uses.
-import {join} from 'lodash';
 import React from 'react';
 
 class Panel extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      collapsed: false
-    };
-  }
-
   render() {
-    const {children, position} = this.props;
-    const panelClasses = [`${position}`];
-    if (this.state.collapsed) {
-      panelClasses.push('collapsed');
-    }
+    const {position, prefix} = this.props;
+    const panelProps = {
+      className: `${position}`
+    };
 
-    return (
-      <app-panel class={join(panelClasses, ' ')}>
-        {React.Children.map(children, child =>
-          React.cloneElement(child, {})
-        )}
-      </app-panel>
-    );
+    return React.createElement(`${prefix ? `${prefix}-` : ''}panel`, panelProps, React.Children.map(this.props.children, child => {
+      const childProps = {};
+      if (child.type === Panel) {
+        childProps.prefix = prefix;
+      }
+      return React.cloneElement(child, childProps);
+    }));
   }
 }
+
+Panel.propTypes = {
+  position: React.PropTypes.string,
+  prefix: React.PropTypes.string,
+  children: React.PropTypes.node
+};
 
 export default Panel;
