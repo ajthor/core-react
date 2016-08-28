@@ -9,23 +9,23 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Webcomponent = exports.Panel = exports.Modal = exports.List = exports.App = undefined;
 
-var _app = require('./components/app.jsx');
+var _app = require('./components/app');
 
 var _app2 = _interopRequireDefault(_app);
 
-var _panel = require('./components/panel.jsx');
+var _panel = require('./components/panel');
 
 var _panel2 = _interopRequireDefault(_panel);
 
-var _list = require('./decorators/list.jsx');
+var _list = require('./decorators/list');
 
 var _list2 = _interopRequireDefault(_list);
 
-var _modal = require('./decorators/modal.jsx');
+var _modal = require('./decorators/modal');
 
 var _modal2 = _interopRequireDefault(_modal);
 
-var _webcomponent = require('./decorators/webcomponent.jsx');
+var _webcomponent = require('./decorators/webcomponent');
 
 var _webcomponent2 = _interopRequireDefault(_webcomponent);
 
