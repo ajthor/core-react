@@ -43,7 +43,7 @@ const Webcomponent = (name, mapToElement = {}, options = {}) => {
       renderComponent({...args}) {
         const mountPoint = this.shadowRoot || this;
         ReactDOM.render(
-          <ReactComponent {...args} />,
+          <ReactComponent {...args}/>,
           mountPoint
         );
       }
