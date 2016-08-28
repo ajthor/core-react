@@ -57,7 +57,7 @@ const Modal = options => {
         const name = WrappedComponent.displayName || WrappedComponent.name;
 
         // Set up event listeners.
-        document.addEventListener(`${name}/open`, this.openModal, true);
+        window.document.addEventListener(`${name}/open`, this.openModal, true);
         document.addEventListener(`${name}/close`, this.closeModal, true);
       }
 
@@ -83,7 +83,8 @@ const Modal = options => {
             role="dialog"
             type={`${options.type}`}
             className={_.join(modalClassList, ' ')}
-            onKeyDown={this.handleKeyDown}>
+            onKeyDown={this.handleKeyDown}
+            >
             {super.render()}
           </modal>
         );

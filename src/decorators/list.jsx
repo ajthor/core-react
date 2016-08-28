@@ -15,7 +15,7 @@ const List = (prefix, options = {}) => {
   options = Object.assign({}, defaults, options);
 
   return WrappedComponent => {
-    return class ListComponent extends React.Component {
+    class ListComponent extends React.Component {
       render() {
         const {items} = this.props;
         const ulClassList = ['list', `${prefix}-list`];
@@ -33,14 +33,20 @@ const List = (prefix, options = {}) => {
             {
               _.map(items, (item, index) => (
                 <li key={index} className={_.join(liClassList, ' ')}>
-                  <WrappedComponent {...item} index={index} />
+                  <WrappedComponent {...item} index={index}/>
                 </li>
               ))
             }
           </ul>
         );
       }
+    }
+
+    ListComponent.propTypes = {
+      items: React.PropTypes.object.isRequired
     };
+
+    return ListComponent;
   };
 };
 
