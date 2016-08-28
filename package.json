@@ -1,0 +1,47 @@
+{
+  "name": "core-react",
+  "version": "0.0.0",
+  "description": "React components & decorators for accelerating development.",
+  "main": "dist/core.js",
+  "scripts": {
+    "build": "gulp build",
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajthor/core-react.git"
+  },
+  "keywords": [
+    "react",
+    "core",
+    "webcomponents"
+  ],
+  "author": "ajthor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ajthor/core-react/issues"
+  },
+  "homepage": "https://github.com/ajthor/core-react#readme",
+  "dependencies": {
+    "core-less": "^0.1.2",
+    "lodash": "^4.15.0",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-runtime": "^6.12.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "gulp": "^3.9.1",
+    "gulp-ava": "^0.14.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-xo": "^0.12.0",
+    "xo": "^0.16.0"
+  },
+  "xo": {
+    "esnext": true,
+    "space": 2
+  }
+}
