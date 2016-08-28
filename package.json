@@ -1,6 +1,6 @@
 {
   "name": "core-react",
-  "version": "0.0.0",
+  "version": "0.0.1-0",
   "description": "React components & decorators for accelerating development.",
   "main": "dist/core.js",
   "scripts": {
@@ -46,7 +46,11 @@
   "xo": {
     "esnext": true,
     "space": true,
-    "envs": ["browser", "node", "shared-node-browser"],
+    "envs": [
+      "browser",
+      "node",
+      "shared-node-browser"
+    ],
     "extends": "xo-react"
   }
 }
