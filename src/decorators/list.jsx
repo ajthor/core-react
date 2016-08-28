@@ -43,7 +43,7 @@ const List = (prefix, options = {}) => {
     }
 
     ListComponent.propTypes = {
-      items: React.PropTypes.object.isRequired
+      items: React.PropTypes.array.isRequired
     };
 
     return ListComponent;
